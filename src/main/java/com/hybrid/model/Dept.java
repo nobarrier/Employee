@@ -1,5 +1,8 @@
 package com.hybrid.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Dept {
 	int deptno;
 	String dname;
@@ -23,7 +26,6 @@ public class Dept {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-	
 	
 
 }
