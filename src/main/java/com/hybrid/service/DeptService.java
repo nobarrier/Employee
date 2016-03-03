@@ -14,32 +14,32 @@ public class DeptService {
 	
 	//필드주입
 	@Autowired
-	DeptMapper deptMapper;
+	DeptMapper DeptMapper;
 	
 	@Transactional
 	public List<Dept> getList() {
 		
-		List<Dept> depts = deptMapper.selectAll();
+		List<Dept> Depts = DeptMapper.selectAll();
 		
-		return depts;
+		return Depts;
 	}
 	
 	@Transactional
-	public Dept getDept(Integer deptno) {
-		return deptMapper.selectByDeptno(deptno);
+	public Dept getDept(Integer Deptno) {
+		return DeptMapper.selectByDeptno(Deptno);
 	}
 	
 	@Transactional
-	public void insert(Dept dept) {
-		deptMapper.insert(dept);
+	public void insert(Dept Dept) {
+		DeptMapper.insert(Dept);
 	}
 	
 	@Transactional
-	public Dept delete(Integer deptno) {
+	public Dept delete(Integer Deptno) {
 		
-		Dept dept = deptMapper.selectByDeptno(deptno);
-		deptMapper.deleteByDeptno(deptno);
-		return dept;
+		Dept Dept = DeptMapper.selectByDeptno(Deptno);
+		DeptMapper.deleteByDeptno(Deptno);
+		return Dept;
 	}
 	
 	
