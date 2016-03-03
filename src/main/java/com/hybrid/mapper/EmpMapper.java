@@ -2,6 +2,7 @@ package com.hybrid.mapper;
 
 import java.util.List;
 
+import com.hybrid.model.Dept;
 import com.hybrid.model.Emp;
 
 public interface EmpMapper {

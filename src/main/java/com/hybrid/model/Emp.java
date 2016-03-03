@@ -9,10 +9,8 @@ public class Emp {
 	String ename;
 	String job;
 	Integer mgr;
-	
 	@JsonFormat(pattern="yyyy-MM-dd")
 	Date hiredate;
-	
 	Float sal;
 	Float comm;
 	Integer deptno;

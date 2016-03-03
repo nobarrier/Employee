@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hybrid.model.Dept;
 import com.hybrid.model.Emp;
+import com.hybrid.service.DeptService;
 import com.hybrid.service.EmpService;
 
 @Controller
@@ -26,27 +28,28 @@ public class EmpController {
 	@RequestMapping(value="/emp/list")
 	@ResponseBody
 	public Map<String, Object> getList() {
-		
 		Map<String, Object> result = new HashMap<>();
 		
-		result.put("success",  "true");
-		result.put("data",  empService.getList());
-		return result;
+		result.put("success", true);
+		result.put("message", "조회성공");
+		
+		result.put("data", empService.getList());
+		
+		return result;		
 	}
 	
-	@RequestMapping(value="/Emp", method=RequestMethod.GET)
+	@RequestMapping(value="/emp", method=RequestMethod.GET)
 	@ResponseBody
 	public Emp getEmp(Integer empno) {
-		log.info("getEmp() Empno=" + empno);
+		log.info("getEmp() empno=" + empno);
 		
 		return empService.getEmp(empno);
 	}
 	
 	@RequestMapping(value="/emp", method=RequestMethod.POST)
 	@ResponseBody
-	public Emp post(Emp emp) {
+	public Emp postEmp(Emp emp) {
 		log.info("empno = " + emp.getEmpno());
-
 		
 		empService.insert(emp);
 		
@@ -59,8 +62,5 @@ public class EmpController {
 		
 		return empService.delete(empno);
 	}
-	
-	
-	
 
 }

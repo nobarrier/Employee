@@ -2,20 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hybrid.mapper.EmpMapper">
     <select id="selectAll" resultType="com.hybrid.model.Emp">
-        select  empno,
-        		ename,
-        		job,
-        		mgr
-        		hiredate,
-        		sal
-        		comm,
-        		deptno
-        from 	emp
-        
+        select empno,
+        	   ename,
+        	   job,
+        	   mgr,
+        	   hiredate,
+        	   sal,
+        	   comm,
+        	   deptno
+          from emp
     </select>
-
-
-
 
 
 </mapper>

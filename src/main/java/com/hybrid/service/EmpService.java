@@ -6,40 +6,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hybrid.mapper.DeptMapper;
-import com.hybrid.model.Dept;
+import com.hybrid.mapper.EmpMapper;
+import com.hybrid.model.Emp;
 
 @Service
 public class EmpService {
 	
 	//필드주입
 	@Autowired
-	DeptMapper deptMapper;
+	EmpMapper empMapper;
 	
 	@Transactional
-	public List<Dept> getList() {
+	public List<Emp> getList() {
 		
-		List<Dept> depts = deptMapper.selectAll();
+		List<Emp> Emps = empMapper.selectAll();
 		
-		return depts;
+		return Emps;
 	}
 	
 	@Transactional
-	public Dept getDept(Integer deptno) {
-		return deptMapper.selectByDeptno(deptno);
+	public Emp getEmp(Integer Empno) {
+		return empMapper.selectByEmpno(Empno);
 	}
 	
 	@Transactional
-	public void insert(Dept dept) {
-		deptMapper.insert(dept);
+	public void insert(Emp Emp) {
+		empMapper.insert(Emp);
 	}
 	
 	@Transactional
-	public Dept delete(Integer deptno) {
+	public Emp delete(Integer Empno) {
 		
-		Dept dept = deptMapper.selectByDeptno(deptno);
-		deptMapper.deleteByDeptno(deptno);
-		return dept;
+		Emp Emp = empMapper.selectByEmpno(Empno);
+		empMapper.deleteByEmpno(Empno);
+		return Emp;
 	}
 	
 	

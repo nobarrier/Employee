@@ -2,36 +2,32 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html data-ng-app="employee">
+
 <head>
 <meta charset="UTF-8">
 <title>list.jsp</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
 <!-- AngularJS -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script type="text/javascript">
+var app = angular.module("employee", []);
 
-var app = angular.module('employee', []);
-
-app.controller('listController', function($scope, $http){
-
+app.controller("listController", function($scope, $http) {
 	
-	var ajax = $http.get('/Employee/emp/list');
+	var ajax = $http.get("/Employee/emp/list");
 	ajax.then(function(res) {
 		console.dir(res);
 		$scope.response = res.data;
-	}, function(res){
+	}, function(res) {
 		console.dir(res);
-		
-	});
+	});	
+	
 });
 
 </script>
-
 </head>
 <body data-ng-controller="listController" class="container">
 <div class="row">
@@ -50,6 +46,10 @@ app.controller('listController', function($scope, $http){
 	</tbody>
 </table>
 
-
 </body>
 </html>
+
+
+
+
+

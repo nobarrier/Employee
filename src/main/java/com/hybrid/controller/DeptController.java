@@ -54,8 +54,5 @@ public class DeptController {
 		
 		return deptService.delete(deptno);
 	}
-	
-	
-	
 
 }
